@@ -42,41 +42,32 @@ public class CardTrick {
         System.out.print("Pick a card suit (Hearts, Diamonds, Spades, Clubs): ");
         String userSuit = scanner.nextLine().trim();
 
-        // Create a user card from input
-        //Card userCard = new Card();
-        //userCard.setValue(userValue);
-        //userCard.setSuit(userSuit);
+        Create a user card from input
+        Card userCard = new Card();
+        userCard.setValue(userValue);
+        userCard.setSuit(userSuit);
 
             
         // and search magicHand here
         
-        //boolean found = false;
-        //for (Card c : magicHand) {
-        //    if (c.getValue() == userCard.getValue() &&
-        //        c.getSuit().equalsIgnoreCase(userCard.getSuit())) {
-        //        found = true;
-        //        break;
-        //    }
-        //}
-
-        //if (found) {
-        //    System.out.println("Your card is in the magic hand!");
-        //} else {
-        //    System.out.println("Your card was NOT found in the magic hand.");
-        //}
-
-        // add one luckcard hard code 2,clubs
-        
-        Card luckyCard = new Card();
-        luckyCard.setValue(2);
-        luckyCard.setSuit("Clubs");
-
-        System.out.println("\nLucky Card: " + luckyCard.getValue() + " of " + luckyCard.getSuit());
-        if (found) {
-            System.out.println("Lucky card is in the hand!");
-        } else {
-            System.out.println("Sorry! lucky card not found.");
+        boolean found = false;
+        for (Card c : magicHand) {
+            if (c.getValue() == userCard.getValue() &&
+                c.getSuit().equalsIgnoreCase(userCard.getSuit())) {
+                found = true;
+                break;
+            }
         }
+
+        if (found) {
+            System.out.println("Your card is in the magic hand!");
+        } else {
+            System.out.println("Your card was NOT found in the magic hand.");
+        }
+
+        
+        
+        
         
     }
     
