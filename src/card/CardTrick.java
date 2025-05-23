@@ -62,9 +62,9 @@ public class CardTrick {
         
         System.out.println("\nLucky Card: " + luckyCard.getValue() + " of " + luckyCard.getSuit());
         if (found) {
-            System.out.println("Lucky card is in the hand!");
+            System.out.println("card is in the hand!");
         } else {
-            System.out.println("Sorry! Lucky card not found.");
+            System.out.println("Sorry! card not found.");
         }
 
         // add one luckcard hard code 2,clubs
