@@ -17,60 +17,38 @@ import java.util.Scanner;
  */
 public class CardTrick {
     
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         Card[] magicHand = new Card[7];
         Random rand = new Random();
-        
-        for (int i=0; i<magicHand.length; i++)
-        {
+
+        //Fill magic hand with 7 random cards
+        for (int i = 0; i < magicHand.length; i++) {
             Card c = new Card();
-            c.setValue(rand.nextInt(13) + 1);
-            c.setSuit(Card.SUITS[rand.nextInt(4)]);
+            c.setValue(rand.nextInt(13) + 1); // 1 to 13
+            c.setSuit(Card.SUITS[rand.nextInt(4)]); // Random suit
             magicHand[i] = c;
             System.out.println("Card " + (i + 1) + ": " + c.getValue() + " of " + c.getSuit());
         }
-        
-        //insert code to ask the user for Card value and suit, create their card
-        
-        Scanner scanner = new Scanner(System.in);
 
-        System.out.print("\nPick a card value (1 to 13): ");
-        int userValue = scanner.nextInt();
-        scanner.nextLine(); // consume newline left by nextInt()
+        //Hardcoded lucky card
+        Card luckyCard = new Card();
+        luckyCard.setValue(2);
+        luckyCard.setSuit("Clubs");
 
-        System.out.print("Pick a card suit (Hearts, Diamonds, Spades, Clubs): ");
-        String userSuit = scanner.nextLine().trim();
-
-        // Create a user card from input
-        Card userCard = new Card();
-        userCard.setValue(userValue);
-        userCard.setSuit(userSuit);
-
-            
-        // and search magicHand here
-        
+        //Search the magic hand for the lucky card
         boolean found = false;
         for (Card c : magicHand) {
-            if (c.getValue() == userCard.getValue() &&
-                c.getSuit().equalsIgnoreCase(userCard.getSuit())) {
+            if (c.getValue() == luckyCard.getValue() &&
+                c.getSuit().equalsIgnoreCase(luckyCard.getSuit())) {
                 found = true;
                 break;
             }
         }
-        
-        
-        // add one luckcard hard code 2,clubs
-        
-        Card luckyCard = new Card();
-        luckyCard.setValue(2);
-        luckyCard.setSuit("Clubs");
-        
         System.out.println("\nLucky Card: " + luckyCard.getValue() + " of " + luckyCard.getSuit());
         if (found) {
             System.out.println("Lucky card is in the hand!");
         } else {
-            System.out.println("Sorry! Lucky card not found.");
+            System.out.println("Sorry. Lucky card not found.");
         }
         
     }
