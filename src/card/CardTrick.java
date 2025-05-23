@@ -58,13 +58,11 @@ public class CardTrick {
                 break;
             }
         }
-        
-        
-        System.out.println("\nLucky Card: " + luckyCard.getValue() + " of " + luckyCard.getSuit());
+
         if (found) {
-            System.out.println("card is in the hand!");
+            System.out.println("Your card is in the magic hand!");
         } else {
-            System.out.println("Sorry! card not found.");
+            System.out.println("Your card was NOT found in the magic hand.");
         }
 
         // add one luckcard hard code 2,clubs
@@ -72,6 +70,13 @@ public class CardTrick {
         Card luckyCard = new Card();
         luckyCard.setValue(2);
         luckyCard.setSuit("Clubs");
+
+        System.out.println("\nLucky Card: " + luckyCard.getValue() + " of " + luckyCard.getSuit());
+        if (found) {
+            System.out.println("Lucky card is in the hand!");
+        } else {
+            System.out.println("Sorry! lucky card not found.");
+        }
         
     }
     
