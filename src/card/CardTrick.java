@@ -60,18 +60,18 @@ public class CardTrick {
         }
         
         
-        // add one luckcard hard code 2,clubs
-        
-        Card luckyCard = new Card();
-        luckyCard.setValue(2);
-        luckyCard.setSuit("Clubs");
-        
         System.out.println("\nLucky Card: " + luckyCard.getValue() + " of " + luckyCard.getSuit());
         if (found) {
             System.out.println("Lucky card is in the hand!");
         } else {
             System.out.println("Sorry! Lucky card not found.");
         }
+
+        // add one luckcard hard code 2,clubs
+        
+        Card luckyCard = new Card();
+        luckyCard.setValue(2);
+        luckyCard.setSuit("Clubs");
         
     }
     
