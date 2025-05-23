@@ -43,27 +43,27 @@ public class CardTrick {
         String userSuit = scanner.nextLine().trim();
 
         // Create a user card from input
-        Card userCard = new Card();
-        userCard.setValue(userValue);
-        userCard.setSuit(userSuit);
+        //Card userCard = new Card();
+        //userCard.setValue(userValue);
+        //userCard.setSuit(userSuit);
 
             
         // and search magicHand here
         
-        boolean found = false;
-        for (Card c : magicHand) {
-            if (c.getValue() == userCard.getValue() &&
-                c.getSuit().equalsIgnoreCase(userCard.getSuit())) {
-                found = true;
-                break;
-            }
-        }
+        //boolean found = false;
+        //for (Card c : magicHand) {
+        //    if (c.getValue() == userCard.getValue() &&
+        //        c.getSuit().equalsIgnoreCase(userCard.getSuit())) {
+        //        found = true;
+        //        break;
+        //    }
+        //}
 
-        if (found) {
-            System.out.println("Your card is in the magic hand!");
-        } else {
-            System.out.println("Your card was NOT found in the magic hand.");
-        }
+        //if (found) {
+        //    System.out.println("Your card is in the magic hand!");
+        //} else {
+        //    System.out.println("Your card was NOT found in the magic hand.");
+        //}
 
         // add one luckcard hard code 2,clubs
         
